@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Evren Web Page">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="webpage.css">
+    <title> Evren Tanık Web Sayfası</title>
+    <style media="screen">
+    </style>
+  </head>
+  <body onclick="a_click(event)" onresize="resize()">
+    <header>
+      <h1> Evren Tanık Kişisel Blog </h1>
+    </header>
+    <div id="navbar" style="display:sticky;top:0">
+
+        <a href="#" id="anasayfa">ANA SAYFA</a>
+        <a href="#" id="makaleler">Makaleler</a>
+        <a href="#" id="özgeçmiş">Özgeçmiş</a>
+        <a href="#" id="aile">Aile</a>
+        <a href="#" id="fotolar">Fotoğraflar</a>
+        <a href="#" id="bitirme">Bitirme Tezi</a>
+    </div>
+  <!--  <div class="yan_bar" id="anasayfa_yan_bar"></div> -->
+    <div class="yan_bar" id="makaleler_yan_bar">
+      <ul>
+        <li><a href="gunesenerjisi.pdf" target="_blank">Makale1</a> </li>
+        <li><a href="A Review on the Fabrication of Polymer-Based.pdf" target="_blank">Makale2</a> </li>
+        <li><a href="Advance Deposition Techniques for Thin Film and Coating.pdf" target="_blank">Makale3</a> </li>
+      </ul>
+    </div>
+    <div class="yan_bar" id="özgeçmiş_yan_bar"></div>
+    <div class="yan_bar" id="aile_yan_bar">
+          <ul>
+            <li><a href="baba.html">Baba</a></li>
+            <li><a href="anne.html">Anne</a></li>
+            <li><a href="abi.html">Abi</a></li>
+          </ul></div>
+    <div class="yan_bar" id="fotolar_yan_bar"></div>
+    <div class="yan_bar" id="bitirme_yan_bar"></div>
+
+    <script type="text/javascript">
+
+    function a_click(event) {
+      var a=event.target.id;
+      var yan_bars=document.getElementsByClassName("yan_bar");
+
+      for(var i=0;i<yan_bars.length;i++){
+        yan_bars[i].style.left="-400px";
+      }
+
+      document.getElementById(a.toString()+"_yan_bar").style.left="0px";
+      console.log(document.getElementById("navbar").clientWidth)
+      console.log(document.body.clientWidth)
+
+    }
+
+    function resize(){
+      var header=document.getElementsByTagName("header")[0];
+      var navbar=document.getElementById("navbar");
+
+      header_height=header.clientHeight;
+      navbar_height=navbar.clientHeight;
+      var height1=header_height+navbar_height;
+      console.log(header_height);
+      console.log(navbar_height);
+
+     var yan_bar_div=document.getElementsByClassName("yan_bar");
+
+     for(var i=0;i<yan_bar_div.length;i++){
+       yan_bar_div[i].style.top=height1;
+     }
+
+
+
+
+
+
+    }
+
+    </script>
+
+  </body>
+</html>
